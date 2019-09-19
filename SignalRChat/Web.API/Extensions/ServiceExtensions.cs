@@ -13,7 +13,7 @@ namespace Web.API.Extensions
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder.WithOrigins("http://localhost:3000")//.AllowAnyOrigin()
+                    builder => builder.AllowAnyOrigin()//.WithOrigins("http://localhost:3000")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials());

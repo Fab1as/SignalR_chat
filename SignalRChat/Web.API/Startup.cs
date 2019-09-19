@@ -29,7 +29,6 @@ namespace Web.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureCors();
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSignalR();
         }
@@ -52,6 +51,8 @@ namespace Web.API
                 routes.MapHub<ChatHub>("/chat");
             });
 
+
+
             app.UseHttpsRedirection();
 
             app.UseCors("CorsPolicy");
@@ -61,6 +62,8 @@ namespace Web.API
             //{
             //    ForwardedHeaders = ForwardedHeaders.All
             //});
+
+            app.UseDefaultFiles();
 
             app.UseStaticFiles();
 
